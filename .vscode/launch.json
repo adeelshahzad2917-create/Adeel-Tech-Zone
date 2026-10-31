@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: orange;
+            margin: 20px;
+            box-shadow: inset;
+        }
+        form {
+            background-color: white green;
+            margin: 12px;
+            text-shadow: 0cqh;
+        }
+
+
+    </style>
+</head>
+<body>
+<form>   
+<label>Name</label>
+<input type="text" placeholder="Enter Your Name.." required>
+<label>Email</label>
+<input type="text" placeholder="Enter Your Email" required>
+<label>Password</label>
+<input type="text" placeholder="Enter Password" required>
+
+
+</form>
+</body>
+</body>
+</html>

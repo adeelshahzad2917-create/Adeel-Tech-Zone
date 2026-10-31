@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(120deg, rgb(176, 215, 238), rgb(94, 48, 138) );
+}
+
+.container {
+    width: 350px;
+    margin: 100px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 95%;
+    padding: 10px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1f6391;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+      <div style="text-align: center;">
+ <img src="C:\Users\Admin\Documents\MY WT PROJECT\dir1750front_wifi2.png" height="300px" alt="ATZ">
+    <br>
+    </div>
+
+<div class="container">
+    
+    <h2>Login</h2>
+    
+    <form onsubmit="return validateLogin()">
+        <input type="text" id="Name" placeholder="Enter Your Name" required ><br>
+         <input type="text" id="email" placeholder="Enter Email"><br>
+        <div id="emailError" class="error"></div>
+        <input type="password" id="password" placeholder="Enter Password"><br>
+        <div id="passError" class="error"></div>
+        
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+
+
+function getValue(id) {
+    return document.getElementById(id).value.trim();
+}
+
+
+function setError(id, message) {
+    document.getElementById(id).innerText = message;
+}
+
+function clearErrors() {
+    setError("emailError", "");
+    setError("passError", "");
+}
+
+
+function isEmpty(value) {
+    return value === "";
+}
+
+
+function isEmailValid(email) {
+    return email.includes("@") && email.includes(".");
+}
+
+
+function isPasswordLengthValid(password) {
+    return password.length >= 6;
+}
+
+
+function containsNumber(password) {
+    return /\d/.test(password);
+}
+
+
+function containsUpperCase(password) {
+    return /[A-Z]/.test(password);
+}
+
+
+function focusField(id) {
+    document.getElementById(id).focus();
+}
+
+
+function showSuccess() {
+    alert("Login Successful in Adeel Tech Zone ✅");
+}
+
+
+function validateLogin() {
+    clearErrors();
+
+    let email = getValue("email");
+    let password = getValue("password");
+
+    if (isEmpty(email)) {
+        setError("emailError", "Email required");
+        focusField("email");
+        return false;
+    }
+
+    if (!isEmailValid(email)) {
+        setError("emailError", "Invalid email format");
+        focusField("email");
+        return false;
+    }
+
+    if (isEmpty(password)) {
+        setError("passError", "Password required");
+        focusField("password");
+        return false;
+    }
+
+    if (!isPasswordLengthValid(password)) {
+        setError("passError", "Password must be 6+ chars");
+        return false;
+    }
+
+    if (!containsNumber(password)) {
+        setError("passError", "Add at least 1 number");
+        return false;
+    }
+
+    if (!containsUpperCase(password)) {
+        setError("passError", "Add 1 uppercase letter");
+        return false;
+    }
+
+    showSuccess();
+    return true;
+}
+
+</script>
+
+</body>
+</html>
