@@ -52,7 +52,7 @@ export function Footer() {
     <div className="container footer-grid">
       <div>
         <Link to="/" className="brand footer-brand">
-          <img src={logo} alt="Adeel Tech Zone" style={{ height: 48, width: 150, objectFit: 'contain' }} />
+          <img src={logo} alt="Adeel Tech Zone" style={{ height: 68, width: 200, objectFit: 'contain' }} />
         </Link>
 
         <p className="muted">
