@@ -18,7 +18,7 @@ export function Header() {
     <header className="header">
       <div className="nav-wrap">
         <Link to="/" className="brand">
-          <img src={logo} alt="Adeel Tech Zone" style={{ height: 48, width: 150, objectFit: 'contain' }} />
+          <img src={logo} alt="Adeel Tech Zone" style={{ height: 68, width: 200, objectFit: 'contain' }} />
         </Link>
 
         <button className="mobile-toggle icon-btn" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
